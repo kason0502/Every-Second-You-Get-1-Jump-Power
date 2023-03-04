@@ -1,0 +1,32 @@
+--MADE BY ZENPP
+x = 1 
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Every Second You Get +1 Jump Power. - Zenpp", "BloodTheme")
+--AutoFarm
+local Main = Window:NewTab("Main")
+local Farm = Main:NewSection("Auto Farm")
+
+Farm:NewToggle("Auto Wins", "TP to max wins", function(state)
+    if state then
+        x = x + 1
+        while x==2 do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(51226, 163356, 384)
+            wait(1)
+            if state == false then
+                x = x - 1 
+                
+                end
+    end
+    else 
+        x=1
+        
+    end
+end)
+
+local AFK = Window:NewTab("Anti AFK")
+local AntiAFK = AFK:NewSection("Anti AFK")
+
+
+AntiAFK:NewButton("AntiAFK", "Anti Afk script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/LoadstringypVvhJBq4QNz", true))()
+end)
