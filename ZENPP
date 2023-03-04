@@ -1,5 +1,6 @@
 --MADE BY ZENPP
 x = 1 
+y = 1
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Every Second You Get +1 Jump Power. - Zenpp", "BloodTheme")
 --AutoFarm
@@ -19,6 +20,25 @@ Farm:NewToggle("Auto Wins", "TP to max wins", function(state)
     end
     else 
         x=1
+        
+    end
+end)
+
+
+Farm:NewToggle("Auto Rebirth", "Rebirths when can", function(state)
+    if state then
+        y = y + 1
+        while y==2 do
+            game:GetService("ReplicatedStorage").RebirthEvent:FireServer()
+
+            wait(1)
+            if state == false then
+                y = y - 1 
+                
+                end
+    end
+    else 
+        y=1
         
     end
 end)
